@@ -104,9 +104,7 @@ ACMD acmd_objs[] = {
 
                 acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("top"), /*Damage*/ 2.0, /*Angle*/ 145, /*KBG*/ 100, /*FKB*/ 95, /*BKB*/ 0, /*Size*/ 5.0, /*X*/ 0.0, /*Y*/ 11.5, /*Z*/ -12.0, /*X2*/ 0.0, /*Y2*/ 11.0, /*Z2*/ -9.0, /*Hitlag*/ 1.0, /*SDI*/ 0.3, /*Clang/Rebound*/ ATTACK_SETOFF_KIND_OFF, /*FacingRestrict*/ ATTACK_LR_CHECK_B, /*SetWeight*/ false, /*ShieldDamage*/ 0, /*Trip*/ 0.0, /*Rehit*/ 0, /*Reflectable*/ false, /*Absorbable*/ false, /*Flinchless*/ false, /*DisableHitlag*/ false, /*Direct/Indirect*/ true, /*Ground/Air*/ COLLISION_SITUATION_MASK_GA, /*Hitbits*/ COLLISION_CATEGORY_MASK_ALL, /*CollisionPart*/ COLLISION_PART_MASK_ALL, /*FriendlyFire*/ false, /*Effect*/ hash40("collision_attr_cutup"), /*SFXLevel*/ ATTACK_SOUND_LEVEL_S, /*SFXType*/ COLLISION_SOUND_ATTR_CUTUP, /*Type*/ ATTACK_REGION_SWORD);
 
-                acmd->wrap(as_hash__const, { L2CValue(1), L2CValue(hash40("top")), L2CValue(10), L2CValue(20), L2CValue(10) });
-
-                AttackModule::set_vec_target_pos(acmd->module_accessor);
+                AttackModule::set_vec_target_pos(acmd->module_accessor, 1, hash40("top"), &Vector2f{.x = 10, .y = 20}, 10, false);
 
                 AttackModule::set_no_damage_fly_smoke_all(acmd->module_accessor, true, false);
                 }
@@ -134,9 +132,7 @@ ACMD acmd_objs[] = {
 
                 acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("top"), /*Damage*/ 2.0, /*Angle*/ 145, /*KBG*/ 100, /*FKB*/ 95, /*BKB*/ 0, /*Size*/ 5.0, /*X*/ 0.0, /*Y*/ 11.5, /*Z*/ -12.5, /*X2*/ 0.0, /*Y2*/ 11.0, /*Z2*/ -9.0, /*Hitlag*/ 1.0, /*SDI*/ 0.3, /*Clang/Rebound*/ ATTACK_SETOFF_KIND_OFF, /*FacingRestrict*/ ATTACK_LR_CHECK_B, /*SetWeight*/ false, /*ShieldDamage*/ 0, /*Trip*/ 0.0, /*Rehit*/ 0, /*Reflectable*/ false, /*Absorbable*/ false, /*Flinchless*/ false, /*DisableHitlag*/ false, /*Direct/Indirect*/ true, /*Ground/Air*/ COLLISION_SITUATION_MASK_GA, /*Hitbits*/ COLLISION_CATEGORY_MASK_ALL, /*CollisionPart*/ COLLISION_PART_MASK_ALL, /*FriendlyFire*/ false, /*Effect*/ hash40("collision_attr_cutup"), /*SFXLevel*/ ATTACK_SOUND_LEVEL_S, /*SFXType*/ COLLISION_SOUND_ATTR_CUTUP, /*Type*/ ATTACK_REGION_SWORD);
 
-                acmd->wrap(as_hash__const, { L2CValue(1), L2CValue(hash40("top")), L2CValue(10), L2CValue(20), L2CValue(10) });
-
-                AttackModule::set_vec_target_pos(acmd->module_accessor);
+                AttackModule::set_vec_target_pos(acmd->module_accessor, 1, hash40("top"), &Vector2f{.x = 10, .y = 20}, 10, false);  
 
                 AttackModule::set_no_damage_fly_smoke_all(acmd->module_accessor, true, false);
                 }
@@ -163,10 +159,7 @@ ACMD acmd_objs[] = {
                 JostleModule::set_status(acmd->module_accessor, false);
 
                 acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("sword2"), /*Damage*/ 2.0, /*Angle*/ 150, /*KBG*/ 100, /*FKB*/ 95, /*BKB*/ 0, /*Size*/ 5.0, /*X*/ 2.0, /*Y*/ 0.0, /*Z*/ 0.0, /*X2*/ 5.5, /*Y2*/ 0.0, /*Z2*/ 0.0, /*Hitlag*/ 1.0, /*SDI*/ 0.3, /*Clang/Rebound*/ ATTACK_SETOFF_KIND_OFF, /*FacingRestrict*/ ATTACK_LR_CHECK_B, /*SetWeight*/ false, /*ShieldDamage*/ 0, /*Trip*/ 0.0, /*Rehit*/ 0, /*Reflectable*/ false, /*Absorbable*/ false, /*Flinchless*/ false, /*DisableHitlag*/ false, /*Direct/Indirect*/ true, /*Ground/Air*/ COLLISION_SITUATION_MASK_GA, /*Hitbits*/ COLLISION_CATEGORY_MASK_ALL, /*CollisionPart*/ COLLISION_PART_MASK_ALL, /*FriendlyFire*/ false, /*Effect*/ hash40("collision_attr_cutup"), /*SFXLevel*/ ATTACK_SOUND_LEVEL_M, /*SFXType*/ COLLISION_SOUND_ATTR_CUTUP, /*Type*/ ATTACK_REGION_SWORD);
-
-                acmd->wrap(as_hash__const, { L2CValue(1), L2CValue(hash40("top")), L2CValue(10), L2CValue(20), L2CValue(10) });
-
-                AttackModule::set_vec_target_pos(acmd->module_accessor);
+                AttackModule::set_vec_target_pos(acmd->module_accessor, 1, hash40("top"), &Vector2f{.x = 10, .y = 20}, 10, false);
 
                 AttackModule::set_no_damage_fly_smoke_all(acmd->module_accessor, true, false);
                 }
