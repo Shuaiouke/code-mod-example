@@ -62,49 +62,50 @@ ACMD acmd_objs[] = {
 
                 AttackModule::clear_all(acmd->module_accessor);
                 }
-    }),
-    ACMD("BATTLE_OBJECT_CATEGORY_FIGHTER", "FIGHTER_KIND_LUCINA", "attack_air_n", "game_attackairn", [] (ACMD* acmd) -> void { 
-        
-        acmd->frame(2);
-        if (acmd->is_excute()) {
-
-        WorkModule::on_flag(acmd->module_accessor, /*Flag*/ FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
-        }
-        acmd->frame(6);
-        if (acmd->is_excute()) {
-
-        acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-
-        acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("hash40("armr""));
-
-        acmd->ATTACK(/*ID*/ 2, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-        }
-        acmd->wait(2);
-        if (acmd->is_excute()) {
-
-        AttackModule::clear_all(acmd->module_accessor);
-        }
-        acmd->frame(15);
-        if (acmd->is_excute()) {
-
-        acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-
-        acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("hash40("armr""));
-
-        acmd->ATTACK(/*ID*/ 2, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-        }
-        acmd->wait(7);
-        if (acmd->is_excute()) {
-
-        AttackModule::clear_all(acmd->module_accessor);
-        }
-        acmd->frame(47);
-        if (acmd->is_excute()) {
-
-        WorkModule::off_flag(acmd->module_accessor, /*Flag*/ FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
-        }
-
     })
+    ,
+    // ACMD("BATTLE_OBJECT_CATEGORY_FIGHTER", "FIGHTER_KIND_LUCINA", "attack_air_n", "game_attackairn", [] (ACMD* acmd) -> void { 
+        
+    //     acmd->frame(2);
+    //     if (acmd->is_excute()) {
+
+    //     WorkModule::on_flag(acmd->module_accessor, /*Flag*/ FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
+    //     }
+    //     acmd->frame(6);
+    //     if (acmd->is_excute()) {
+
+    //     acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
+
+    //     acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("hash40("armr""));
+
+    //     acmd->ATTACK(/*ID*/ 2, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
+    //     }
+    //     acmd->wait(2);
+    //     if (acmd->is_excute()) {
+
+    //     AttackModule::clear_all(acmd->module_accessor);
+    //     }
+    //     acmd->frame(15);
+    //     if (acmd->is_excute()) {
+
+    //     acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
+
+    //     acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("hash40("armr""));
+
+    //     acmd->ATTACK(/*ID*/ 2, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
+    //     }
+    //     acmd->wait(7);
+    //     if (acmd->is_excute()) {
+
+    //     AttackModule::clear_all(acmd->module_accessor);
+    //     }
+    //     acmd->frame(47);
+    //     if (acmd->is_excute()) {
+
+    //     WorkModule::off_flag(acmd->module_accessor, /*Flag*/ FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
+    //     }
+
+    // })
     
 };
 
