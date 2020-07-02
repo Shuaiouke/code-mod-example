@@ -115,7 +115,7 @@ ACMD acmd_objs[] = {
 
                 AttackModule::clear_all(acmd->module_accessor);
 
-                acmd->wrap(notify_event_msc_cmd, { L2CValue("0x2127e37c07"), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS) });
+                acmd->wrap((void (*)(u64))notify_event_msc_cmd, { L2CValue("0x2127e37c07"), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS) });
                 }
                 acmd->frame(16);
                 if (acmd->is_excute()) {
@@ -183,7 +183,7 @@ ACMD acmd_objs[] = {
 
                 AttackModule::clear_all(acmd->module_accessor);
 
-                acmd->wrap(notify_event_msc_cmd, { L2CValue(hash40("0x2127e37c07")), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
+                acmd->wrap((void (*)(u64))notify_event_msc_cmd, { L2CValue("0x2127e37c07"), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
                 }
                 acmd->frame(38);
                 if (acmd->is_excute()) {
@@ -227,6 +227,15 @@ ACMD acmd_objs[] = {
 
 
     ACMD("BATTLE_OBJECT_CATEGORY_FIGHTER", "FIGHTER_KIND_LUCINA", "special_air_hi", "game_specialairhi", [] (ACMD* acmd) -> void { 
+                
+                acmd->frame(1);
+                if (acmd->is_excute()) {
+                acmd->wrap((void (*)(u64))notify_event_msc_cmd, { "0x2127e37c07", L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
+                }
+                
+                
+                
+                
                 acmd->frame(5);
                 if (acmd->is_excute()) {
                         
@@ -252,7 +261,8 @@ ACMD acmd_objs[] = {
 
                 AttackModule::clear(acmd->module_accessor, /*ID*/ 3, 0);
 
-                acmd->wrap(notify_event_msc_cmd, { L2CValue(hash40("0x2127e37c07")), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS) });
+                
+                
                 }
                 acmd->frame(12);
                 if (acmd->is_excute()) {
@@ -265,7 +275,7 @@ ACMD acmd_objs[] = {
 
 
 /*
-acmd->wrap(notify_event_msc_cmd, { L2CValue(hash40("0x2127e37c07")), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
+acmd->wrap((void (*)(u64))notify_event_msc_cmd, { "0x2127e37c07", L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
 
 Vector2f pos = Vector2f{.x = 10, .y = 20};
 AttackModule::set_vec_target_pos(acmd->module_accessor, 1, hash40("top"), &pos, 10, false);
