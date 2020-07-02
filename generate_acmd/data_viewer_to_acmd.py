@@ -1,4 +1,3 @@
-  
 import sys
 
 WRAPPED_FUNCTIONS = ['frame', 'wait', 'is_excute', 'ATTACK']
@@ -57,6 +56,7 @@ for line in lines:
 	if f_type == "app::lua_bind":
 		module_name = f_name.split("::")[-2]
 		module_func_name = f_name.split("::")[-1]
+		
 		args_str = line[line.index("(")+1:line.index(")")]
 		
 		if shouldTab:
