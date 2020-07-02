@@ -18,7 +18,7 @@ def get_arg(arg_str, wrap_args=False):
 		value = get_arg(value)
 		if wrap_args:
 			value = "L2CValue(" + value + ")"
-		return '/*' + key + '*/ ' + value;
+		return '/*' + key + '*/ ' + value
 	
 	if arg_str.islower(): # hash
 		arg_str = "hash40(\"" + arg_str + "\")"

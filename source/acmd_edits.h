@@ -21,7 +21,7 @@ using namespace app::lua_bind;
 ACMD acmd_objs[] = {
     ACMD("BATTLE_OBJECT_CATEGORY_FIGHTER", "FIGHTER_KIND_LUCINA", "special_air_hi", "game_specialairhi", [] (ACMD* acmd) -> void { 
                 
-                acmd->frame(1);
+                acmd->frame(3);
                 if (acmd->is_excute()) {
                 acmd->wrap((void (*)(u64))notify_event_msc_cmd, { L2CValue((u64)0x2127e37c07), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
                 }
@@ -39,6 +39,7 @@ ACMD acmd_objs[] = {
                 WorkModule::on_flag(acmd->module_accessor, /*Flag*/ FIGHTER_MARTH_STATUS_SPECIAL_HI_FLAG_SPECIAL_HI_SET_LR);
 
                 WorkModule::on_flag(acmd->module_accessor, /*Flag*/ FIGHTER_MARTH_STATUS_SPECIAL_HI_FLAG_TRANS_MOVE);
+                acmd->wrap((void (*)(u64))notify_event_msc_cmd, { L2CValue((u64)0x2127e37c07), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
                 }
                 acmd->frame(6);
                 if (acmd->is_excute()) {
@@ -46,6 +47,7 @@ ACMD acmd_objs[] = {
                 acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("sword1"), /*Damage*/ 70.0, /*Angle*/ 361, /*KBG*/ 90, /*FKB*/ 0, /*BKB*/ 20, /*Size*/ 5.0, /*X*/ 0.0, /*Y*/ 0.0, /*Z*/ 4.5, /*Hitlag*/ 0.9, /*SDI*/ 1.0, /*Clang/Rebound*/ ATTACK_SETOFF_KIND_OFF, /*FacingRestrict*/ ATTACK_LR_CHECK_POS, /*SetWeight*/ false, /*ShieldDamage*/ 10, /*Trip*/ 0.0, /*Rehit*/ 0, /*Reflectable*/ false, /*Absorbable*/ false, /*Flinchless*/ false, /*DisableHitlag*/ false, /*Direct/Indirect*/ true, /*Ground/Air*/ COLLISION_SITUATION_MASK_GA, /*Hitbits*/ COLLISION_CATEGORY_MASK_ALL, /*CollisionPart*/ COLLISION_PART_MASK_ALL, /*FriendlyFire*/ false, /*Effect*/ hash40("collision_attr_cutup"), /*SFXLevel*/ ATTACK_SOUND_LEVEL_M, /*SFXType*/ COLLISION_SOUND_ATTR_CUTUP, /*Type*/ ATTACK_REGION_SWORD);
                         
                 acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("sword1"), /*Damage*/ 70.0, /*Angle*/ 74, /*KBG*/ 90, /*FKB*/ 0, /*BKB*/ 20, /*Size*/ 5.0, /*X*/ 0.0, /*Y*/ 0.0, /*Z*/ -1.5, /*Hitlag*/ 0.9, /*SDI*/ 1.0, /*Clang/Rebound*/ ATTACK_SETOFF_KIND_OFF, /*FacingRestrict*/ ATTACK_LR_CHECK_POS, /*SetWeight*/ false, /*ShieldDamage*/ 10, /*Trip*/ 0.0, /*Rehit*/ 0, /*Reflectable*/ false, /*Absorbable*/ false, /*Flinchless*/ false, /*DisableHitlag*/ false, /*Direct/Indirect*/ true, /*Ground/Air*/ COLLISION_SITUATION_MASK_GA, /*Hitbits*/ COLLISION_CATEGORY_MASK_ALL, /*CollisionPart*/ COLLISION_PART_MASK_ALL, /*FriendlyFire*/ false, /*Effect*/ hash40("collision_attr_cutup"), /*SFXLevel*/ ATTACK_SOUND_LEVEL_M, /*SFXType*/ COLLISION_SOUND_ATTR_CUTUP, /*Type*/ ATTACK_REGION_SWORD);
+                acmd->wrap((void (*)(u64))notify_event_msc_cmd, { L2CValue((u64)0x2127e37c07), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
                 }
                 acmd->frame(7);
                 if (acmd->is_excute()) {
@@ -54,58 +56,10 @@ ACMD acmd_objs[] = {
 
                 AttackModule::clear(acmd->module_accessor, /*ID*/ 3, 0);
 
+                acmd->wrap((void (*)(u64))notify_event_msc_cmd, { L2CValue((u64)0x2127e37c07), L2CValue(GROUND_CLIFF_CHECK_KIND_ALWAYS_BOTH_SIDES) });
                 
-                
-                }
-                acmd->frame(12);
-                if (acmd->is_excute()) {
-
-                AttackModule::clear_all(acmd->module_accessor);
                 }
     })
-    ,
-    // ACMD("BATTLE_OBJECT_CATEGORY_FIGHTER", "FIGHTER_KIND_LUCINA", "attack_air_n", "game_attackairn", [] (ACMD* acmd) -> void { 
-        
-    //     acmd->frame(2);
-    //     if (acmd->is_excute()) {
-
-    //     WorkModule::on_flag(acmd->module_accessor, /*Flag*/ FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
-    //     }
-    //     acmd->frame(6);
-    //     if (acmd->is_excute()) {
-
-    //     acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-
-    //     acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("hash40("armr""));
-
-    //     acmd->ATTACK(/*ID*/ 2, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-    //     }
-    //     acmd->wait(2);
-    //     if (acmd->is_excute()) {
-
-    //     AttackModule::clear_all(acmd->module_accessor);
-    //     }
-    //     acmd->frame(15);
-    //     if (acmd->is_excute()) {
-
-    //     acmd->ATTACK(/*ID*/ 0, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-
-    //     acmd->ATTACK(/*ID*/ 1, /*Part*/ 0, /*Bone*/ hash40("hash40("armr""));
-
-    //     acmd->ATTACK(/*ID*/ 2, /*Part*/ 0, /*Bone*/ hash40("hash40("sword1""));
-    //     }
-    //     acmd->wait(7);
-    //     if (acmd->is_excute()) {
-
-    //     AttackModule::clear_all(acmd->module_accessor);
-    //     }
-    //     acmd->frame(47);
-    //     if (acmd->is_excute()) {
-
-    //     WorkModule::off_flag(acmd->module_accessor, /*Flag*/ FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
-    //     }
-
-    // })
     
 };
 
